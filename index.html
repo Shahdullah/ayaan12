@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Nigha 🎉</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink:#ff6b9d; --purple:#845ef7; --blue:#339af0; --cyan:#22d3ee;
+  --yellow:#ffd43b; --orange:#ff922b; --green:#51cf66;
+  --bg:#f8f9ff; --text:#1a1a2e; --muted:#6b7280;
+  --shadow:0 4px 24px rgba(0,0,0,0.08); --shadow-lg:0 12px 48px rgba(0,0,0,0.13);
+  --radius:20px; --radius-sm:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 24px 80px;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 10% 20%,rgba(255,107,157,0.18) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 90% 10%,rgba(132,94,247,0.15) 0%,transparent 60%),radial-gradient(ellipse 70% 60% at 50% 90%,rgba(51,154,240,0.13) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 80% 70%,rgba(255,212,59,0.12) 0%,transparent 60%),#f8f9ff;animation:meshMove 8s ease-in-out infinite alternate;}
+@keyframes meshMove{0%{filter:hue-rotate(0deg)}100%{filter:hue-rotate(25deg)}}
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:0.5;animation:blobFloat 6s ease-in-out infinite;pointer-events:none;}
+.blob-1{width:300px;height:300px;background:var(--pink);top:-80px;left:-60px;}
+.blob-2{width:250px;height:250px;background:var(--purple);top:20%;right:-80px;animation-delay:2s;}
+.blob-3{width:200px;height:200px;background:var(--cyan);bottom:10%;left:10%;animation-delay:4s;}
+.blob-4{width:180px;height:180px;background:var(--yellow);bottom:5%;right:15%;animation-delay:1s;}
+@keyframes blobFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-30px) scale(1.05)}}
+.confetti-wrap{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1;}
+.cdot{position:absolute;border-radius:50%;animation:cfall linear infinite;}
+@keyframes cfall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
+.hero-content{position:relative;z-index:2;}
+.emoji-row{font-size:2.5rem;margin-bottom:16px;display:flex;gap:12px;justify-content:center;animation:popIn 0.6s cubic-bezier(0.34,1.56,0.64,1) both;}
+@keyframes popIn{0%{transform:scale(0);opacity:0}100%{transform:scale(1);opacity:1}}
+.tag-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;background:white;border:1.5px solid rgba(132,94,247,0.2);border-radius:100px;font-size:0.78rem;font-weight:600;color:var(--purple);letter-spacing:0.05em;margin-bottom:24px;box-shadow:0 2px 12px rgba(132,94,247,0.12);animation:popIn 0.5s 0.1s both;}
+.hero-name{font-family:'Syne',sans-serif;font-size:clamp(3rem,12vw,8rem);font-weight:800;line-height:1;background:linear-gradient(135deg,#ff6b9d 0%,#845ef7 40%,#339af0 70%,#22d3ee 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200% 200%;animation:gradShift 4s ease infinite,slideUp 0.7s 0.2s both;}
+@keyframes gradShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes slideUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.hero-sub{margin-top:20px;font-size:clamp(1rem,2.5vw,1.3rem);color:var(--muted);font-weight:500;animation:slideUp 0.7s 0.4s both;}
+.hero-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:28px;animation:slideUp 0.7s 0.6s both;}
+.chip{padding:8px 18px;border-radius:100px;font-size:0.82rem;font-weight:700;}
+.chip-pink{background:rgba(255,107,157,0.12);color:#d6336c;}
+.chip-purple{background:rgba(132,94,247,0.12);color:#6741d9;}
+.chip-blue{background:rgba(51,154,240,0.12);color:#1971c2;}
+.chip-yellow{background:rgba(255,212,59,0.15);color:#e67700;}
+.scroll-hint{margin-top:48px;display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--muted);font-size:0.78rem;animation:bounce 2s ease-in-out infinite,slideUp 0.7s 1s both;}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+/* SECTIONS */
+.section{padding:60px 24px;max-width:1200px;margin:0 auto;}
+.section-header{display:flex;align-items:center;gap:14px;margin-bottom:32px;}
+.section-badge{width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+.badge-pink{background:rgba(255,107,157,0.13);}
+.badge-purple{background:rgba(132,94,247,0.13);}
+.section-title{font-family:'Syne',sans-serif;font-size:clamp(1.4rem,4vw,2rem);font-weight:800;}
+.section-count{margin-left:auto;font-size:0.78rem;font-weight:700;color:var(--muted);background:rgba(0,0,0,0.05);padding:4px 12px;border-radius:100px;white-space:nowrap;}
+
+/* PREVIEW GRID */
+.preview-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;}
+.preview-card{background:white;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;position:relative;box-shadow:var(--shadow);border:1.5px solid rgba(132,94,247,0.1);transition:transform 0.3s,box-shadow 0.3s;}
+.preview-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+.preview-card img,.preview-card video{width:100%;height:100%;object-fit:cover;display:block;}
+.preview-card video{background:#000;}
+
+/* PRANK */
+.prank-section{padding:20px 24px 60px;display:flex;flex-direction:column;align-items:center;gap:16px;}
+.prank-card{background:white;border-radius:24px;padding:36px 48px;text-align:center;box-shadow:var(--shadow-lg);border:1.5px solid rgba(255,107,157,0.15);max-width:520px;width:100%;transition:transform 0.2s;}
+.prank-card:hover{transform:translateY(-4px);}
+.prank-icon-row{font-size:2.5rem;margin-bottom:14px;}
+.prank-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:8px;}
+.prank-desc{color:var(--muted);font-size:0.9rem;margin-bottom:24px;line-height:1.6;}
+.prank-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 36px;background:linear-gradient(135deg,var(--pink),var(--purple));color:white;border:none;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;box-shadow:0 6px 24px rgba(255,107,157,0.35);transition:transform 0.2s,box-shadow 0.2s;}
+.prank-btn:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 10px 32px rgba(255,107,157,0.45);}
+.prank-hint{font-size:0.78rem;color:var(--muted);font-style:italic;}
+
+/* GALLERY CAROUSEL */
+#full-gallery{display:none;}
+.carousel-wrap{position:relative;padding:0 0 24px;}
+.carousel-track-outer{overflow:hidden;border-radius:var(--radius);position:relative;}
+.carousel-track{display:flex;gap:16px;transition:transform 0.45s cubic-bezier(0.4,0,0.2,1);will-change:transform;padding:8px 4px 16px;}
+.carousel-track.photo-track .gallery-card{min-width:calc(33.333% - 12px);}
+.carousel-track.video-track .gallery-card{min-width:calc(50% - 8px);}
+@media(max-width:768px){
+  .carousel-track.photo-track .gallery-card{min-width:calc(50% - 8px);}
+  .carousel-track.video-track .gallery-card{min-width:100%;}
+}
+@media(max-width:480px){
+  .carousel-track.photo-track .gallery-card{min-width:100%;}
+}
+.gallery-card{background:white;border-radius:var(--radius);overflow:hidden;border:1.5px solid rgba(132,94,247,0.1);transition:all 0.3s ease;position:relative;flex-shrink:0;box-shadow:0 6px 24px rgba(132,94,247,0.08);}
+.gallery-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 16px 40px rgba(132,94,247,0.18);}
+.gallery-card.photo-card{aspect-ratio:1;}
+.gallery-card.video-card{aspect-ratio:16/9;}
+.gallery-card img{width:100%;height:100%;object-fit:cover;display:block;cursor:pointer;}
+.gallery-card video{width:100%;height:100%;object-fit:cover;display:block;}
+
+/* CAROUSEL CONTROLS */
+.carousel-controls{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:20px;}
+.car-arrow{width:44px;height:44px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;transition:all 0.2s ease;background:white;box-shadow:0 4px 16px rgba(0,0,0,0.1);color:var(--purple);flex-shrink:0;}
+.car-arrow:hover:not(:disabled){background:linear-gradient(135deg,var(--pink),var(--purple));color:white;transform:scale(1.1);box-shadow:0 6px 20px rgba(132,94,247,0.35);}
+.car-arrow:disabled{opacity:0.3;cursor:not-allowed;transform:none;}
+.car-dots{display:flex;gap:6px;align-items:center;}
+.car-dot{width:8px;height:8px;border-radius:50%;background:rgba(132,94,247,0.2);transition:all 0.25s ease;cursor:pointer;border:none;}
+.car-dot.active{background:linear-gradient(135deg,var(--pink),var(--purple));width:22px;border-radius:4px;}
+.car-counter{font-size:0.75rem;font-weight:700;color:var(--muted);min-width:60px;text-align:center;}
+
+/* DIVIDER */
+.fancy-divider{display:flex;align-items:center;gap:16px;padding:0 24px;max-width:1200px;margin:0 auto 40px;}
+.fdline{flex:1;height:1.5px;background:linear-gradient(to right,transparent,rgba(132,94,247,0.2),transparent);}
+.fddot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--purple));flex-shrink:0;}
+
+/* MUSIC PLAYER */
+.music-player{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:100;background:white;border-radius:100px;padding:10px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 8px 40px rgba(0,0,0,0.15);border:1.5px solid rgba(132,94,247,0.15);min-width:320px;max-width:90vw;}
+.mp-disc{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--purple));display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;animation:spinDisc 4s linear infinite paused;}
+.mp-disc.playing{animation-play-state:running;}
+@keyframes spinDisc{to{transform:rotate(360deg)}}
+.mp-info{flex:1;min-width:0;}
+.mp-title{font-size:0.78rem;font-weight:700;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.mp-sub{font-size:0.68rem;color:var(--muted);}
+.mp-progress{width:80px;height:3px;background:rgba(132,94,247,0.15);border-radius:10px;cursor:pointer;flex-shrink:0;position:relative;}
+.mp-fill{height:100%;border-radius:10px;width:0%;background:linear-gradient(135deg,var(--pink),var(--purple));pointer-events:none;transition:width 0.5s linear;}
+.mp-ctrl{width:36px;height:36px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;transition:all 0.2s;}
+.mp-play{background:linear-gradient(135deg,var(--pink),var(--purple));color:white;box-shadow:0 3px 12px rgba(132,94,247,0.35);}
+.mp-play:hover{transform:scale(1.1);}
+.mp-secondary{background:rgba(132,94,247,0.1);color:var(--purple);}
+.mp-secondary:hover{background:rgba(132,94,247,0.2);}
+.mp-vol{-webkit-appearance:none;width:60px;height:3px;background:rgba(132,94,247,0.15);border-radius:10px;cursor:pointer;accent-color:var(--purple);flex-shrink:0;}
+audio{display:none;}
+
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;z-index:200;background:rgba(10,10,20,0.92);align-items:center;justify-content:center;backdrop-filter:blur(10px);}
+.lightbox.open{display:flex;}
+.lb-inner{position:relative;max-width:90vw;max-height:90vh;}
+.lb-inner img,.lb-inner video{max-width:90vw;max-height:85vh;border-radius:var(--radius);box-shadow:0 20px 80px rgba(0,0,0,0.5);}
+.lb-close{position:absolute;top:-44px;right:0;background:rgba(255,255,255,0.1);border:none;color:white;font-size:1.5rem;cursor:pointer;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.lb-close:hover{background:rgba(255,255,255,0.2);}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.12);border:none;color:white;font-size:1.6rem;cursor:pointer;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background 0.2s;z-index:10;}
+.lb-nav:hover{background:rgba(255,255,255,0.25);}
+.lb-nav-l{left:-60px;}
+.lb-nav-r{right:-60px;}
+.lb-counter{position:absolute;bottom:-36px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.6);font-size:0.8rem;font-weight:600;white-space:nowrap;}
+
+footer{text-align:center;padding:40px 24px 120px;color:var(--muted);font-size:0.82rem;}
+footer strong{color:var(--pink);}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:#f1f1f1;}
+::-webkit-scrollbar-thumb{background:rgba(132,94,247,0.4);border-radius:10px;}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="blob blob-1"></div><div class="blob blob-2"></div>
+  <div class="blob blob-3"></div><div class="blob blob-4"></div>
+  <div class="confetti-wrap" id="confetti"></div>
+  <div class="hero-content">
+    <div class="emoji-row">🎂 🎉 🥳 🎊 ✨</div>
+    <div class="tag-pill">✦ Today is your day</div>
+    <h1 class="hero-name">Happy Birthday<br>Nigha Ayaan!</h1>
+    <p class="hero-sub">Wishing you a day filled with joy, laughter &amp; love 💖</p>
+    <div class="hero-chips">
+      <span class="chip chip-pink">🌸 You're amazing</span>
+      <span class="chip chip-purple">✨ So blessed</span>
+      <span class="chip chip-blue">🎵 Let's celebrate</span>
+      <span class="chip chip-yellow">🔥 Best day ever</span>
+    </div>
+    <div class="scroll-hint"><span style="font-size:1.3rem;">↓</span><span>Scroll for surprises</span></div>
+  </div>
+</section>
+
+<!-- PREVIEW: 2 photos + 2 videos -->
+<div class="section reveal">
+  <div class="section-header">
+    <div class="section-badge badge-pink">📷</div>
+    <h2 class="section-title">A little glimpse</h2>
+    <span class="section-count">2 photos · 2 videos</span>
+  </div>
+  <div class="preview-grid">
+    <div class="preview-card"><img src="photos/photo (1).jpeg" alt="Photo 1"></div>
+    <div class="preview-card"><img src="photos/photo (2).jpeg" alt="Photo 2"></div>
+    <div class="preview-card"><video src="videos/video (1).mp4" controls loop playsinline></video></div>
+    <div class="preview-card"><video src="videos/video (2).mp4" controls loop playsinline></video></div>
+  </div>
+</div>
+
+<!-- PRANK -->
+<div class="prank-section reveal">
+  <div class="prank-card">
+    <div class="prank-icon-row">👀🔥📲</div>
+    <h3 class="prank-title">Psst… Nigha 👇</h3>
+    <p class="prank-desc">Want to see leaked MMS and photos?<br>You know you're curious… go on, click it 😏</p>
+    <button class="prank-btn" id="prank-btn" onclick="revealGallery()">🔐 Show me everything</button>
+  </div>
+  <p class="prank-hint" id="prank-hint">( just a lil surprise waiting for you ✨ )</p>
+</div>
+
+<!-- FULL GALLERY -->
+<div id="full-gallery">
+  <div class="fancy-divider"><div class="fdline"></div><div class="fddot"></div><div class="fdline"></div></div>
+  <div style="text-align:center;padding:0 24px 48px;max-width:600px;margin:0 auto;">
+    <div style="font-size:3rem;margin-bottom:12px;">🎉😂💛</div>
+    <h2 style="font-family:'Syne',sans-serif;font-size:clamp(1.5rem,4vw,2.2rem);font-weight:800;background:linear-gradient(135deg,#ff6b9d,#845ef7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px;">Gotcha Nigha! 😂</h2>
+    <p style="color:var(--muted);font-size:1rem;line-height:1.7;">These aren't "leaked" — they're our most beautiful memories together. Every photo, every video, captured just for you. Happy Birthday! 🥳</p>
+  </div>
+
+  <!-- PHOTOS CAROUSEL -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-badge badge-pink">📸</div>
+      <h2 class="section-title">Our Photos</h2>
+      <span class="section-count">21 photos</span>
+    </div>
+    <div class="carousel-wrap">
+      <div class="carousel-track-outer">
+        <div class="carousel-track photo-track" id="photos-track"></div>
+      </div>
+      <div class="carousel-controls">
+        <button class="car-arrow" id="photo-prev" onclick="slideCarousel('photo',-1)">&#8592;</button>
+        <div class="car-dots" id="photo-dots"></div>
+        <span class="car-counter" id="photo-counter">1–3 / 21</span>
+        <button class="car-arrow" id="photo-next" onclick="slideCarousel('photo',1)">&#8594;</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="fancy-divider"><div class="fdline"></div><div class="fddot"></div><div class="fdline"></div></div>
+
+  <!-- VIDEOS CAROUSEL -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-badge badge-purple">🎬</div>
+      <h2 class="section-title">Our Videos</h2>
+      <span class="section-count">16 videos</span>
+    </div>
+    <div class="carousel-wrap">
+      <div class="carousel-track-outer">
+        <div class="carousel-track video-track" id="videos-track"></div>
+      </div>
+      <div class="carousel-controls">
+        <button class="car-arrow" id="video-prev" onclick="slideCarousel('video',-1)">&#8592;</button>
+        <div class="car-dots" id="video-dots"></div>
+        <span class="car-counter" id="video-counter">1–2 / 16</span>
+        <button class="car-arrow" id="video-next" onclick="slideCarousel('video',1)">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MUSIC -->
+<audio id="audio" src="music/music.mpeg" loop></audio>
+<div class="music-player">
+  <div class="mp-disc" id="mp-disc">🎵</div>
+  <div class="mp-info">
+    <div class="mp-title">Birthday Song 🎂</div>
+    <div class="mp-sub">For Nigha Ayaan ✨</div>
+  </div>
+  <div class="mp-progress" id="mp-prog" onclick="seekAudio(event)">
+    <div class="mp-fill" id="mp-fill"></div>
+  </div>
+  <button class="mp-ctrl mp-secondary" onclick="restartAudio()">↺</button>
+  <button class="mp-ctrl mp-play" id="mp-playbtn" onclick="toggleAudio()">▶</button>
+  <input class="mp-vol" type="range" min="0" max="1" step="0.05" value="0.6" oninput="setVol(this.value)">
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLb()">
+  <div class="lb-inner" id="lb-inner" onclick="event.stopPropagation()">
+    <button class="lb-close" onclick="closeLb()">✕</button>
+  </div>
+</div>
+
+<footer>Made with 💖 by <strong>Shahdullah</strong> &nbsp;·&nbsp; For Nigha 🌍✨</footer>
+
+<script>
+// CONFETTI
+const ce=document.getElementById('confetti');
+const cols=['#ff6b9d','#845ef7','#339af0','#ffd43b','#51cf66','#ff922b','#22d3ee'];
+for(let i=0;i<50;i++){
+  const d=document.createElement('div'); d.className='cdot';
+  const s=Math.random()*10+4;
+  d.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;top:-20px;background:${cols[Math.floor(Math.random()*cols.length)]};opacity:${Math.random()*0.5+0.2};animation:cfall ${Math.random()*6+4}s ${Math.random()*8}s linear infinite;`;
+  ce.appendChild(d);
+}
+
+// SCROLL REVEAL
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// BUILD PHOTO CAROUSEL (21 photos)
+const photoFiles = [
+  'photos/photo (1).jpeg','photos/photo (2).jpeg','photos/photo (3).jpeg',
+  'photos/photo (4).jpeg','photos/photo (5).jpeg','photos/photo (6).jpeg',
+  'photos/photo (7).jpeg','photos/photo (8).jpeg','photos/photo (9).jpeg',
+  'photos/photo (10).jpeg','photos/photo (11).jpeg','photos/photo (12).jpeg',
+  'photos/photo (13).jpeg','photos/photo (14).jpeg','photos/photo (15).jpeg',
+  'photos/photo (16).jpeg','photos/photo (17).jpeg','photos/photo (18).jpeg',
+  'photos/photo (19).jpeg','photos/photo (20).jpeg','photos/photo (21).jpeg'
+];
+
+// BUILD VIDEO CAROUSEL (16 videos)
+const videoFiles = [
+  'videos/video (1).mp4','videos/video (2).mp4','videos/video (3).mp4',
+  'videos/video (4).mp4','videos/video (5).mp4','videos/video (6).mp4',
+  'videos/video (7).mp4','videos/video (8).mp4','videos/video (9).mp4',
+  'videos/video (10).mp4','videos/video (11).mp4','videos/video (12).mp4',
+  'videos/video (13).mp4','videos/video (14).mp4','videos/video (15).mp4',
+  'videos/video (16).mp4'
+];
+
+const photoState={cur:0,total:21,visible:3};
+const videoState={cur:0,total:16,visible:2};
+
+function buildGallery(){
+  const pt=document.getElementById('photos-track');
+  const vt=document.getElementById('videos-track');
+  photoFiles.forEach((src,i)=>{
+    const d=document.createElement('div');
+    d.className='gallery-card photo-card';
+    const img=document.createElement('img');
+    img.src=src; img.alt='Photo '+(i+1);
+    img.onclick=()=>openLb(i);
+    d.appendChild(img); pt.appendChild(d);
+  });
+  videoFiles.forEach((src,i)=>{
+    const d=document.createElement('div');
+    d.className='gallery-card video-card';
+    const v=document.createElement('video');
+    v.src=src; v.controls=true; v.loop=true; v.preload='metadata'; v.setAttribute('playsinline','');
+    d.appendChild(v); vt.appendChild(d);
+  });
+  buildDots('photo',21,3);
+  buildDots('video',16,2);
+  updateCarousel('photo');
+  updateCarousel('video');
+}
+buildGallery();
+
+function buildDots(type,total,visible){
+  const pages=Math.ceil(total/visible);
+  const container=document.getElementById(`${type}-dots`);
+  container.innerHTML='';
+  for(let i=0;i<pages;i++){
+    const b=document.createElement('button');
+    b.className='car-dot'+(i===0?' active':'');
+    b.onclick=(()=>{const idx=i;return()=>{const s=type==='photo'?photoState:videoState;s.cur=idx*s.visible;updateCarousel(type);}})();
+    container.appendChild(b);
+  }
+}
+
+function slideCarousel(type,dir){
+  const s=type==='photo'?photoState:videoState;
+  s.cur=Math.max(0,Math.min(s.cur+dir,s.total-s.visible));
+  updateCarousel(type);
+}
+
+function updateCarousel(type){
+  const s=type==='photo'?photoState:videoState;
+  const track=document.getElementById(`${type}s-track`);
+  const cards=track.children;
+  if(!cards.length)return;
+  const w=window.innerWidth;
+  if(type==='photo') s.visible=w<=480?1:w<=768?2:3;
+  else               s.visible=w<=768?1:2;
+  s.cur=Math.min(s.cur,s.total-s.visible);
+  const cardW=cards[0].getBoundingClientRect().width||200;
+  track.style.transform=`translateX(-${s.cur*(cardW+16)}px)`;
+  document.getElementById(`${type}-counter`).textContent=`${s.cur+1}–${Math.min(s.cur+s.visible,s.total)} / ${s.total}`;
+  document.getElementById(`${type}-prev`).disabled=s.cur<=0;
+  document.getElementById(`${type}-next`).disabled=s.cur>=s.total-s.visible;
+  const dots=document.getElementById(`${type}-dots`).children;
+  const activePage=Math.floor(s.cur/s.visible);
+  Array.from(dots).forEach((d,i)=>d.classList.toggle('active',i===activePage));
+}
+window.addEventListener('resize',()=>{updateCarousel('photo');updateCarousel('video');});
+
+// PRANK
+function revealGallery(){
+  document.getElementById('full-gallery').style.display='block';
+  const btn=document.getElementById('prank-btn');
+  btn.textContent='🎉 Happy Birthday Nigha!';
+  btn.style.background='linear-gradient(135deg,#51cf66,#339af0)';
+  btn.onclick=null; btn.style.cursor='default';
+  document.getElementById('prank-hint').textContent='( Gotcha! These are our memories 💛 )';
+  setTimeout(()=>document.getElementById('full-gallery').scrollIntoView({behavior:'smooth',block:'start'}),100);
+}
+
+// LIGHTBOX
+let lbIdx=0;
+function openLb(idx){
+  lbIdx=idx;
+  renderLb();
+  document.getElementById('lightbox').classList.add('open');
+}
+function renderLb(){
+  const inner=document.getElementById('lb-inner');
+  inner.innerHTML=`<button class="lb-close" onclick="closeLb()">✕</button>
+    <button class="lb-nav lb-nav-l" onclick="navLb(-1)">&#8592;</button>
+    <button class="lb-nav lb-nav-r" onclick="navLb(1)">&#8594;</button>
+    <div class="lb-counter">${lbIdx+1} / ${photoFiles.length}</div>`;
+  const img=document.createElement('img');
+  img.src=photoFiles[lbIdx];
+  inner.appendChild(img);
+}
+function navLb(dir){lbIdx=(lbIdx+dir+photoFiles.length)%photoFiles.length;renderLb();}
+function closeLb(){document.getElementById('lightbox').classList.remove('open');}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape')closeLb();
+  if(e.key==='ArrowRight')navLb(1);
+  if(e.key==='ArrowLeft')navLb(-1);
+});
+
+// MUSIC - auto play on first interaction
+const audio=document.getElementById('audio');
+const disc=document.getElementById('mp-disc');
+let playing=false;
+audio.volume=0.6;
+
+function startMusic(){
+  audio.play().then(()=>{
+    playing=true;
+    disc.classList.add('playing');
+    document.getElementById('mp-playbtn').textContent='⏸';
+  }).catch(()=>{});
+}
+document.body.addEventListener('click',function onFirstClick(){
+  startMusic();
+  document.body.removeEventListener('click',onFirstClick);
+});
+
+function toggleAudio(){
+  if(playing){audio.pause();disc.classList.remove('playing');document.getElementById('mp-playbtn').textContent='▶';}
+  else{audio.play();disc.classList.add('playing');document.getElementById('mp-playbtn').textContent='⏸';}
+  playing=!playing;
+}
+function restartAudio(){audio.currentTime=0;audio.play();playing=true;disc.classList.add('playing');document.getElementById('mp-playbtn').textContent='⏸';}
+function setVol(v){audio.volume=v;}
+function seekAudio(e){if(!audio.duration)return;const r=e.currentTarget.getBoundingClientRect();audio.currentTime=((e.clientX-r.left)/r.width)*audio.duration;}
+audio.addEventListener('timeupdate',()=>{if(!audio.duration)return;document.getElementById('mp-fill').style.width=(audio.currentTime/audio.duration*100)+'%';});
+</script>
+</body>
+</html>
